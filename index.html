@@ -14,29 +14,24 @@
         <div class="chistmas-lights">
             <ul class="rows">
                 <li class="lights">
-                    <ul>
-                        <li class="color1"></li>
-                        <li class="color2"></li>
-                        <li class="color3"></li>
-                        <li class="color4"></li>
-                        <li class="color5"></li>
-                        <li class="color6"></li>
-                        <li class="color7"></li>
-                    </ul>
-                    <ul>
-                        <li class="color1 off"></li>
-                        <li class="color2 off"></li>
-                        <li class="color3 off"></li>
-                        <li class="color4 off"></li>
-                        <li class="color5 off"></li>
-                        <li class="color6 off"></li>
-                        <li class="color7 off"></li>
+                    <ul v-for="line in setup.lines">
+                        <li v-for="light in setup.lights" :style="{background: classColor(light-1)}"></li>
                     </ul>
                 </li>
             </ul>
         </div>
         <div class="logo">
             <h1>Christmas Lights</h1>
+        </div>
+        <div class="control">
+            <div class="onOff">
+                <h2>On / Off</h2>
+                <div class="button" :class="{off: !on}" @click="onOff()">
+                    <div>
+                        <p>{{on ? "ON" : "OFF"}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <p class="credito"><a href="https://prismacode.com" target="_blank">Gustavo Lima de Carvalho - 2020</a></p>

@@ -43,6 +43,63 @@ body {
   margin-bottom: 50px;
 }
 
+.main .control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .control .onOff h2 {
+  font-size: 20px;
+  color: #bbe1fa;
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.main .control .onOff .button {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #3282b8;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  position: relative;
+}
+
+.main .control .onOff .button > div {
+  position: absolute;
+  left: 0;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+  width: 50%;
+  background: #bbe1fa;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .control .onOff .button > div p {
+  font-size: 15px;
+  font-family: "Courier Prime", monospace;
+  color: #0f4c75;
+}
+
+.main .control .onOff .off > div {
+  right: 0;
+  left: 50%;
+  background: #3282b8;
+}
+
 .main .chistmas-lights {
   position: absolute;
   top: 0;
@@ -70,46 +127,6 @@ body {
   position: relative;
   -webkit-transition: 1s ease;
   transition: 1s ease;
-}
-
-.main .chistmas-lights .rows .lights ul .color1 {
-  background: #D73624;
-  background: radial-gradient(circle, #d73624 25%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-}
-
-.main .chistmas-lights .rows .lights ul .color2 {
-  background: #EE632A;
-  background: radial-gradient(circle, #ee632a 25%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-}
-
-.main .chistmas-lights .rows .lights ul .color3 {
-  background: #F4D942;
-  background: radial-gradient(circle, #f4d942 25%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-}
-
-.main .chistmas-lights .rows .lights ul .color4 {
-  background: #177749;
-  background: radial-gradient(circle, #177749 25%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-}
-
-.main .chistmas-lights .rows .lights ul .color5 {
-  background: #217DD4;
-  background: radial-gradient(circle, #217dd4 25%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-}
-
-.main .chistmas-lights .rows .lights ul .color6 {
-  background: #263C9F;
-  background: radial-gradient(circle, #263c9f 25%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-}
-
-.main .chistmas-lights .rows .lights ul .color7 {
-  background: #6E1B5F;
-  background: radial-gradient(circle, #6e1b5f 25%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
-}
-
-.main .chistmas-lights .rows .lights ul .off {
-  -webkit-box-shadow: none;
-          box-shadow: none;
 }
 
 .credito {

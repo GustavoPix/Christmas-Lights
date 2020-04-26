@@ -18,6 +18,52 @@ body{
         font-family: $font1;
         margin-bottom: 50px;
     }
+    .control{
+        display: flex;
+        .onOff{
+            h2{
+                font-size: 20px;
+                color: $color4;
+                font-family: $font1;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .button{
+                width: 100px;
+                height: 50px;
+                border-radius: 5px;
+                overflow: hidden;
+                border: 1px solid $color3;
+                cursor: pointer;
+                transition: 0.5s ease;
+                position: relative;
+                >div{
+                    position: absolute;
+                    left: 0;
+                    transition: 0.2s ease-out;
+                    width: 50%;
+                    background: $color4;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    p{
+                        font-size: 15px;
+                        font-family: $font2;
+                        color: $color2;
+                        
+                    }
+                }
+            }
+            .off{
+                > div{
+                    right: 0;
+                    left: 50%;
+                    background: $color3;
+                }
+            }
+        }
+    }
     .chistmas-lights
     {
         position: absolute;
@@ -36,42 +82,6 @@ body{
                         border-radius: 50%;
                         position: relative;
                         transition: 1s ease;
-                    }
-                    .color1{
-                        background: #D73624;
-                        background: radial-gradient(circle, rgba(215, 54, 36,1) 25%,  rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-                    }
-                    .color2{
-                        background: #EE632A;
-                        background: radial-gradient(circle, rgba(238, 99, 42,1) 25%,  rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-                    }
-                    .color3{
-                        background: #F4D942;
-                        background: radial-gradient(circle, rgba(244, 217, 66,1) 25%,  rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-                    }
-                    .color4{
-                        background: #177749;
-                        background: radial-gradient(circle, rgba(23, 119, 73,1) 25%,  rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-                    }
-                    .color5{
-                        background: #217DD4;
-                        background: radial-gradient(circle, rgba(33, 125, 212,1) 25%,  rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-                    }
-                    .color6{
-                        background: #263C9F;
-                        background: radial-gradient(circle, rgba(38, 60, 159,1) 25%,  rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-                    }
-                    .color7{
-                        background: #6E1B5F;
-                        background: radial-gradient(circle, rgba(110, 27, 95,1) 25%,  rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%);
-                    }
-                    .on{
-
-                    }
-                    .off
-                    {
-                        box-shadow: none;
-                        
                     }
                 }
             }
