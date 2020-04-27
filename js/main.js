@@ -3,7 +3,8 @@ const vm_main = new Vue({
     data:{
         on:true,
         timer:0,
-        updateTime:100,
+        updateTime:10000,
+        speed:10,
         ligths:[
             {
                 r:215,
@@ -72,7 +73,7 @@ const vm_main = new Vue({
             {
                 this.updateLights();
                 this.timer++;
-                if(this.timer >= this.updateTime)
+                if(this.timer >= this.updateTime/this.speed)
                 {
                     this.timer = 0;
                     this.toogleLights();
@@ -88,12 +89,12 @@ const vm_main = new Vue({
                 if(l.on)
                 {
                     //l.itensity-=1/this.updateTime;
-                    l.itensity=this.timer/this.updateTime;
+                    l.itensity=this.timer/(this.updateTime/this.speed);
                 }
                 else
                 {
-                    //l.itensity+=1/this.updateTime;
-                    l.itensity=1-this.timer/this.updateTime;
+                    //l.itensity+=1/(this.updateTime/this.speed);
+                    l.itensity=1-this.timer/(this.updateTime/this.speed);
                 }
             });
         },

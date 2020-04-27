@@ -20,6 +20,10 @@ body{
     }
     .control{
         display: flex;
+        > div{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
         .onOff{
             h2{
                 font-size: 20px;
@@ -61,6 +65,27 @@ body{
                     left: 50%;
                     background: $color3;
                 }
+            }
+        }
+        .speed{
+            h2{
+                font-size: 20px;
+                color: $color4;
+                font-family: $font1;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            input{
+                padding: 5px;
+                border: 1px solid $color3;
+                background: none;
+                border-radius: 5px;
+                width: 100px;
+                height: 50px;
+                font-size: 15px;
+                font-family: $font2;
+                color: $color4;
+                text-align: center;
             }
         }
     }
