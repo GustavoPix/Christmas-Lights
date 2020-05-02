@@ -15,7 +15,13 @@
             <ul class="rows">
                 <li class="lights">
                     <ul v-for="line in setup.lines">
-                        <li v-for="light in setup.lights" :style="{background: classColor(light-1)}"></li>
+                        <li v-for="light in setup.lights" :style="{background: classColor(line.lights,light-1)}">
+                            <div class="inputs">
+                                <input type="number" min="0" max="255" class="red" v-model="line.lights[light-1].r">
+                                <input type="number" min="0" max="255" class="green" v-model="line.lights[light-1].g">
+                                <input type="number" min="0" max="255" class="blue" v-model="line.lights[light-1].b">
+                            </div>
+                        </li>
                     </ul>
                 </li>
             </ul>

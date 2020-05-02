@@ -4,7 +4,7 @@ const vm_main = new Vue({
         on:true,
         timer:0,
         updateTime:10000,
-        speed:10,
+        speed:100,
         ligths:[
             {
                 r:215,
@@ -57,7 +57,7 @@ const vm_main = new Vue({
             }
         ],
         setup:{
-            lines:1,
+            lines:[],
             lights:7
         }
     },
@@ -65,6 +65,30 @@ const vm_main = new Vue({
         onOff()
         {
             this.on = !this.on
+        },
+        start()
+        {
+            this.addLine();
+        },
+        addLine()
+        {
+            this.setup.lines.push({
+                lights:[]
+            });
+            for(let i = 0; i < this.setup.lights; i++)
+            {
+                this.addColor();
+            }
+        },
+        addColor()
+        {
+            this.setup.lines.forEach(l => {
+                l.lights.push({
+                    r:Math.floor(Math.random() * 255),
+                    g:Math.floor(Math.random() * 255),
+                    b:Math.floor(Math.random() * 255)
+                });
+            });
         },
         async updateFrame()
         {
@@ -104,9 +128,9 @@ const vm_main = new Vue({
                 l.on  = !l.on;
             });
         },
-        classColor(i)
+        classColor(lights,i)
         {
-            return `radial-gradient(circle, rgba(${this.ligths[i].r}, ${this.ligths[i].g}, ${this.ligths[i].b},${this.ligths[i].itensity}) ${30*this.ligths[i].itensity}%,  rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%)`;
+            return `radial-gradient(circle, rgba(${lights[i].r}, ${lights[i].g}, ${lights[i].b},${this.ligths[i].itensity}) ${30*this.ligths[i].itensity}%,  rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%)`;
         },
         debug()
         {
@@ -121,5 +145,6 @@ const vm_main = new Vue({
     },
     created() {
         this.updateFrame();
+        this.start();
     },
 });
