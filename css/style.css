@@ -126,6 +126,128 @@ body {
   text-align: center;
 }
 
+.main .control .lightColor h2 {
+  font-size: 20px;
+  color: #bbe1fa;
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.main .control .lightColor .light {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.main .control .lightColor .inputs {
+  top: 60px;
+}
+
+.main .control .lightColor .inputs input {
+  width: 55px;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid #3282b8;
+  background: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Courier Prime", monospace;
+  color: #bbe1fa;
+  text-align: center;
+}
+
+.main .control .lightColor .inputs .red {
+  border: 1px solid #b83232;
+}
+
+.main .control .lightColor .inputs .green {
+  border: 1px solid #32b83c;
+}
+
+.main .control .lightColor .inputs .blue {
+  border: 1px solid #3282b8;
+}
+
+.main .control .lightColor > input {
+  width: 55px;
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: 1px solid #3282b8;
+  background: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: "Courier Prime", monospace;
+  color: #bbe1fa;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.main .control .rows h2 {
+  font-size: 20px;
+  color: #bbe1fa;
+  font-family: "Dosis", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.main .control .rows > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #3282b8;
+}
+
+.main .control .rows > div > * {
+  width: 50%;
+}
+
+.main .control .rows > div .number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main .control .rows > div .number p {
+  font-size: 20px;
+  color: #bbe1fa;
+  font-family: "Dosis", sans-serif;
+}
+
+.main .control .rows > div .arrows button {
+  width: 100%;
+  height: 50%;
+  background: none;
+  border: none;
+  font-size: 10px;
+  color: #bbe1fa;
+  font-family: "Courier Prime", monospace;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.main .control .rows > div .arrows button:hover {
+  color: #3282b8;
+}
+
 .main .chistmas-lights {
   position: absolute;
   top: 0;
@@ -147,43 +269,11 @@ body {
 }
 
 .main .chistmas-lights .rows .lights ul li {
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
   position: relative;
   -webkit-transition: 1s ease;
   transition: 1s ease;
-}
-
-.main .chistmas-lights .rows .lights ul li .inputs {
-  position: absolute;
-  top: 60px;
-}
-
-.main .chistmas-lights .rows .lights ul li .inputs input {
-  width: 55px;
-  text-align: center;
-  margin-bottom: 5px;
-  padding: 5px;
-  border: 1px solid #3282b8;
-  background: none;
-  border-radius: 5px;
-  font-size: 15px;
-  font-family: "Courier Prime", monospace;
-  color: #bbe1fa;
-  text-align: center;
-}
-
-.main .chistmas-lights .rows .lights ul li .inputs .red {
-  border: 1px solid #b83232;
-}
-
-.main .chistmas-lights .rows .lights ul li .inputs .green {
-  border: 1px solid #32b83c;
-}
-
-.main .chistmas-lights .rows .lights ul li .inputs .blue {
-  border: 1px solid #3282b8;
+  cursor: pointer;
 }
 
 .credito {

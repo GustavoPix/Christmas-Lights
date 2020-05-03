@@ -14,13 +14,15 @@
         <div class="chistmas-lights">
             <ul class="rows">
                 <li class="lights">
-                    <ul v-for="line in setup.lines">
-                        <li v-for="light in setup.lights" :style="{background: classColor(line.lights,light-1)}">
-                            <div class="inputs">
-                                <input type="number" min="0" max="255" class="red" v-model="line.lights[light-1].r">
-                                <input type="number" min="0" max="255" class="green" v-model="line.lights[light-1].g">
-                                <input type="number" min="0" max="255" class="blue" v-model="line.lights[light-1].b">
-                            </div>
+                    <ul v-for="(line,i) in setup.lines">
+                        <li 
+                            v-for="light in setup.lights"
+                            :style="{
+                                background: classColor(line.lights,light-1),
+                                width: line.lights[light-1].size + 'px',
+                                height: line.lights[light-1].size + 'px',
+                            }" 
+                            @click="selectLight(i,light-1)">
                         </li>
                     </ul>
                 </li>
@@ -40,7 +42,37 @@
             </div>
             <div class="speed">
                 <h2>Speed</h2>
-                <input type="number" v-model="speed">
+                <input type="text" v-model="speed">
+            </div>
+            <div class="lightColor">
+                <h2>Light Color</h2>
+                <div class="light" :style="{background: classColor(setup.lines[lightSelected.line].lights,lightSelected.light)}"></div>
+                <div class="inputs">
+                    <input type="text" class="red" v-model="lightSelected.r" v-on:keyup="changeColor('r')">
+                    <input type="text" class="green" v-model="lightSelected.g" v-on:keyup="changeColor('g')">
+                    <input type="text" class="blue" v-model="lightSelected.b" v-on:keyup="changeColor('b')">
+                </div>
+            </div>
+            <div class="lightColor">
+                <h2>Light Size</h2>
+                <div class="light" :style="{background: classColor(setup.lines[lightSelected.line].lights,lightSelected.light)}"></div>
+                <input type="text" v-model="lightSelected.size" v-on:keyup="changeSize()">
+            </div>
+            <div class="speed">
+                <h2>Itensity</h2>
+                <input type="text" v-model="maxItensity">
+            </div>
+            <div class="rows">
+                <h2>Rows</h2>
+                <div>
+                    <div class="number">
+                        <p>{{setup.lines.length}}</p>
+                    </div>
+                    <div class="arrows">
+                        <button @click="addLine()">/\</button>
+                        <button>\/</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
