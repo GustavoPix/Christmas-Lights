@@ -61,7 +61,7 @@ const vm_main = new Vue({
         },
         addLine()
         {
-            if(this.setup.lines.length < 8)
+            if(this.setup.lines.length < 7)
             {
                 this.setup.lines.push({
                     lights:[]
@@ -70,6 +70,18 @@ const vm_main = new Vue({
                 {
                     this.addColor();
                 }
+            }
+        },
+        removeLine()
+        {
+            if(this.setup.lines.length > 1)
+            {
+                if(this.lightSelected.line >= this.setup.lines.length - 2)
+                {
+                    this.selectLight(0,0);
+                }
+
+                this.setup.lines.splice(this.setup.lines.length - 1,1);
             }
         },
         addColor()
